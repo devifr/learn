@@ -4,9 +4,15 @@ class CoursesController < ApplicationController
 	def index
 		@courses = Course.all
 	end
+	def edit
+		@category = Category.find(params[:category_id]) if params[:category_id].present?
+		@categories = Category.all
+	end
 
 	def new
 		@course = Course.new
+		@category = Category.find(params[:category_id]) if params[:category_id].present?
+		@categories = Category.all
 	end
 
 	def create

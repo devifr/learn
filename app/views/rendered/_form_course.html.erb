@@ -1,0 +1,20 @@
+<%= form_for @course do |f| %>
+	<p>
+		<%= f.label :title %> 
+		<%= f.text_field :title %>
+	</p>
+	<p>
+		<%= f.label :description %> 
+		<%= f.text_area :description %>
+	</p>
+		<% if params[:category_id].present? %>
+			<%= f.hidden_field :category_id, value: params[:category_id]  %>
+		<% else %>
+			<p>
+			Category <br/>
+			<%= select_tag(:category_id, options_from_collection_for_select(@categories, :id, :name)) %>
+			<!-- <%= collection_select(:category_id, :category_id, @categories, :id, :name) %> -->
+			</p>
+		<% end %>
+	<p><%= submit_tag "Save" %></p>
+<% end %>

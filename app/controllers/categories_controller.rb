@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+	before_filter :authenticate_student!
 	before_filter :find_id, except: [:index,:new,:create]
 
 	def index

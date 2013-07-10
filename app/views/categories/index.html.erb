@@ -17,6 +17,7 @@
 				<td><%= key+1 %></td>
 				<td><%= cat.name %></td>
 				<td>
+					<%= link_to "",new_course_path(cat.id),:'class' => "icon-add" %>
 					<%= link_to "",category_path(cat),:'class' => "icon-fullscreen" %>
 					<%= link_to '',edit_category_path(cat),:'class' => "icon-edit" %>
 					<%= link_to '',category_path(cat), method: "delete",:'class' => "icon-remove", data: {confirm: "Are You Sure?"} %>

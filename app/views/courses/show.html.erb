@@ -1,1 +1,18 @@
-show
+<% provide(:title, 'Show Categories') %>
+
+	<header>
+		<h1>Courses Detail</h1>
+	</header> 
+	<p>
+		Title :<br/>
+		<%= @course.title %>
+	</p>
+	<p>
+		Description :<br/>
+		<%= @course.description %>
+	</p>
+	<p>
+		Category :<br/>
+		<%= @course.category.name %>
+	</p>
+	<p><%= link_to 'back', courses_path %> </p>

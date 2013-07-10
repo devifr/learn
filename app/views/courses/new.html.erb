@@ -1,1 +1,11 @@
-new
+<% if @category.present?
+		category_name = @category.name
+	end  
+%>
+<% provide(:title, "New Course #{category_name}") %>
+
+	<header>
+		<h1>New Course <%= "#{category_name}" %> </h1>
+	</header>
+	<%= render partial: "rendered/form_course", locals: { course: @course } %>
+	<%= link_to 'Back', courses_path %>
