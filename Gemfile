@@ -3,12 +3,17 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 gem 'execjs'
 gem 'therubyracer', :platforms => :ruby
+gem 'newrelic_rpm'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :development, :test do
 	# gem 'mysql2'
 	gem 'sqlite3'
-	gem 'rspec-rails', '2.10.0'
+	gem 'rspec-rails', '~>2.0'
+	gem 'factory_girl_rails'
+	gem 'ffaker'
+	gem 'database_cleaner'
+	gem 'shoulda'
 end
 
 

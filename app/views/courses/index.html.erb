@@ -1,0 +1,28 @@
+<% provide(:title, "List Courses") %>
+<header>
+	<h1>List Courses</h1>
+</header>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Title</th>
+			<th>Simple Description</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @courses.each_with_index do |course,key| %>
+		<tr>
+			<td><%= key+1 %></td>
+			<td><%= course.title %></td>
+			<td><%= truncate(course.description, length: 17) %></td>
+			<td>
+				<%= link_to '',course_path(course),:"class" => "icon-fullscreen" %>
+				<%= link_to '',edit_course_path(course),:"class" => "icon-edit" %>
+				<%= link_to '',course_path(course), method: "delete", data: { confirm: "Are You Sure?" },:"class" => "icon-remove" %>
+			</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

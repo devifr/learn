@@ -1,0 +1,27 @@
+<% provide(:title, 'List Categories') %>
+	<header>
+		<h1>List Categories</h1>
+	</header>
+	<%= link_to "New",new_category_path, :"class" => "btn btn-small" %>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>No</th>
+				<th>Name</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @categories.each_with_index do |cat, key| %> 
+			<tr>
+				<td><%= key+1 %></td>
+				<td><%= cat.name %></td>
+				<td>
+					<%= link_to "",category_path(cat),:'class' => "icon-fullscreen" %>
+					<%= link_to '',edit_category_path(cat),:'class' => "icon-edit" %>
+					<%= link_to '',category_path(cat), method: "delete",:'class' => "icon-remove", data: {confirm: "Are You Sure?"} %>
+				</td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>

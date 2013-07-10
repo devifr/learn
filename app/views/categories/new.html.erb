@@ -1,0 +1,7 @@
+<% provide(:title, 'New Categories') %>
+
+	<header>
+		<h1>Input Categories</h1>
+	</header> 
+	<%= render partial: "rendered/form", locals: {category: @category} %>
+	<p><%= link_to 'back', categories_path %> </p>
